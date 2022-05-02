@@ -29,9 +29,11 @@ services:
       - traefik.http.routers.apple-https.tls=true
       - traefik.http.routers.apple-https.rule=Host(`apple.website`)
     restart: unless-stopped
-    # 設定本地掛載目錄，可直接修改容器內網站內容
-    # volumes:
-    #   - ./apple:/var/www/html
+    volumes:
+      # 設定本地掛載目錄，可直接修改容器內網站內容
+      # - ./apple:/var/www/html
+      # PHP 設定檔
+      - ./php/etc/php.ini:/usr/local/etc/php/php.ini:ro
   google:
     image: joomla:3.10.8
     container_name: google
@@ -48,9 +50,11 @@ services:
       - traefik.http.routers.google-https.tls=true
       - traefik.http.routers.google-https.rule=Host(`google.website`)
     restart: unless-stopped
-    # 設定本地掛載目錄，可直接修改容器內網站內容
-    # volumes:
-    #   - ./google:/var/www/html
+    volumes:
+      # 設定本地掛載目錄，可直接修改容器內網站內容
+      # - ./google:/var/www/html
+      # PHP 設定檔
+      - ./php/etc/php.ini:/usr/local/etc/php/php.ini:ro
 
   traefik:
     image: traefik

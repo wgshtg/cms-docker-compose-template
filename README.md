@@ -108,3 +108,6 @@ apple:
 
 ### 問題 6. `MariaDB` 可以替換成 `MySQL` 嗎？
 可以，把 `image` 替換成 `mysql` 即可，自行決定版本號選用和調整`container_name`(容器名稱是唯一值，不能重複)。
+
+### 問題 7. 如何調整 `PHP` 設定？
+將 `php/etc/php.ini` 掛載至容器內，容器內 `PHP` 設定會即時更新，必要時可重啟容器。
