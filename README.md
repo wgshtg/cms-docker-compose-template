@@ -111,3 +111,15 @@ apple:
 
 ### 問題 7. 如何調整 `PHP` 設定？
 將 `php/etc/php.ini` 掛載至容器內，容器內 `PHP` 設定會即時更新，必要時可重啟容器。
+
+### 問題 8. 直接在專案下啟動容器，瀏覽器打開網址，顯示無法連上這個網站？
+請將範本內的 `apple`, `google` 兩個服務的域名指向本地加入至本機 `DNS`，即可正常連線。
+
+```sh
+# 方法 1：使用編輯器直接修改 host
+# macOS & linux file path: /etc/hosts
+# Windows file path: C:\Windows\System32\Drivers\etc\hosts
+
+# 方法 2：執行以下指令 (macOS or Linux)
+sudo echo 127.0.0.1 apple.website google.website >> /etc/hosts
+```
