@@ -3,8 +3,7 @@ services:
   mysql:
     image: mysql
     container_name: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root
+    env_file: mysql.env
     restart: unless-stopped
     # 開放容器 3306 在本地連線
     ports:
@@ -25,10 +24,7 @@ services:
   apple:
     image: joomla:3.10.8
     container_name: apple
-    environment:
-      JOOMLA_DB_HOST: mysql
-      JOOMLA_DB_PASSWORD: root
-      JOOMLA_DB_NAME: apple
+    env_file: apple.env
     labels:
       - traefik.enable=true
       # 啟用 HTTP
@@ -46,10 +42,7 @@ services:
   google:
     image: joomla:3.10.8
     container_name: google
-    environment:
-      JOOMLA_DB_HOST: mysql
-      JOOMLA_DB_PASSWORD: root
-      JOOMLA_DB_NAME: google
+    env_file: google.env
     labels:
       - traefik.enable=true
       # 啟用 HTTP
