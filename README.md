@@ -131,6 +131,8 @@ apple:
 # 方法 1：使用編輯器直接修改 host
 # macOS & linux file path: /etc/hosts
 # Windows file path: C:\Windows\System32\Drivers\etc\hosts
+# 增加以下內容
+127.0.0.1 apple.website google.website
 
 # 方法 2：執行以下指令 (macOS or Linux)
 sudo echo 127.0.0.1 apple.website google.website >> /etc/hosts
