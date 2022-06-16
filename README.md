@@ -14,6 +14,10 @@
 # 啟動容器
 docker-compose up -d
 
+# 啟動指定容器
+# docker-compose up -d <service1 name> <service2 name> ...
+docker-compose up -d mysql adminer apple traefik
+
 # 停止並移除容器
 docker-compose down
 
@@ -49,6 +53,15 @@ tls:
         certFile: /etc/traefik/ssl/cert.pem
         keyFile: /etc/traefik/ssl/key.pem
 ```
+
+## 使用 [Adminer](https://www.adminer.org/) 資料庫管理工具
+
+伺服器填寫 `mysql`，請參考 `docker-compose.yml` 定義資料庫容器使用的服務名稱
+> 注意不是 `container_name`
+
+帳號密碼自行填入，若初始啟動、尚未修改過管理者帳號密碼，請參考 `docker-compose.yml` 裡定義資料庫容器的環境變數數值
+
+> 若有建立或修改使用者帳號密碼，再自行調整填入的數值
 
 ## 問題說明
 

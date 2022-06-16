@@ -13,6 +13,15 @@ services:
     volumes:
       - mysql-data-volume:/var/lib/mysql
 
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.adminer.rule=Host(`adminer.website`)
+      - traefik.http.routers.adminer-https.tls=false
+
   apple:
     image: joomla:3.10.8
     container_name: apple
