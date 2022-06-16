@@ -74,3 +74,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik/etc:/etc/traefik:ro
+
+volumes:
+  mysql-data-volume:
