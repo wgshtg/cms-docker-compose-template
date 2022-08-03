@@ -165,3 +165,8 @@ apple:
 # 方法 2：執行以下指令 (macOS or Linux)
 sudo echo 127.0.0.1 apple.website google.website >> /etc/hosts
 ```
+
+### 問題 9. 安裝套件時，缺少 php 相關模組或套件，該如何處理？
+
+1. 可以透過 `docker-php-ext-install` 在容器內安裝套件，參考[這裡](Install-packages.md)。
+2. 若需要重新建立容器也自動包含需要的套件，需另外客製化 `docker image`。
